@@ -290,14 +290,18 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
+            overflow: hidden;
             background: var(--gradient-1);
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            font-weight: 700;
-            color: white;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Skills Section */
@@ -341,12 +345,24 @@
         }
 
         .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: var(--gradient-3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            /*font-size: 3rem;*/
+            /*margin-bottom: 1rem;*/
+            /*background: var(--gradient-3);*/
+            /*-webkit-background-clip: text;*/
+            /*-webkit-text-fill-color: transparent;*/
+            /*background-clip: text;*/
+            width: 60px;              /* Set size for the icon */
+            height: 60px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;      /* Keeps icon proportional without cropping */
         }
 
         .skill-name {
@@ -389,9 +405,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: white;
-            font-weight: 700;
+            border-radius: 10px; /* Optional for rounded corners */
+            overflow: hidden;    /* Prevents overflow */
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;    /* This is the key to proper scaling */
+            border-radius: 10px;  /* Optional: match parent border radius */
         }
 
         .project-content {
@@ -528,6 +550,13 @@
             transition: all 0.3s ease;
         }
 
+        .social-link img {
+            width: 24px;       /* or adjust as needed */
+            height: 24px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
         .social-link:hover {
             color: var(--primary-color);
             transform: translateY(-3px);
@@ -595,7 +624,7 @@
 <!-- Navigation -->
 <nav>
     <div class="nav-container">
-        <div class="logo">Vrushik</div>
+        <div class="logo">Vrushik Raval</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -617,10 +646,10 @@
 
     <div class="hero-content">
         <p class="hero-subtitle">Hello, I'm</p>
-        <h1 class="hero-title">Vrushik</h1>
+        <h1 class="hero-title">Vrushik Raval</h1>
         <p class="hero-description">
-            Full Stack Developer & UI/UX Designer passionate about creating
-            innovative digital experiences that blend creativity with functionality.
+            Software Developer specializing in PHP, Laravel, Symfony, and MySQL.
+            Passionate about building robust web applications and learning new technologies.
         </p>
         <a href="#projects" class="cta-button">View My Work</a>
     </div>
@@ -632,25 +661,30 @@
     <div class="about-content">
         <div class="about-text">
             <p>
-                I'm a passionate Full Stack Developer with expertise in modern web technologies.
-                I love creating beautiful, functional, and user-friendly applications that solve
-                real-world problems.
+                I'm a motivated and dedicated Software Developer with hands-on experience in PHP, Laravel, Symfony, MySQL, and JavaScript.
+                I'm passionate about learning new technologies and contributing to the growth of organizations while continually enhancing my technical and professional skills.
             </p>
             <p>
-                With a strong foundation in both frontend and backend development, I enjoy
-                working with cutting-edge technologies and frameworks. My goal is to create
-                digital experiences that not only look great but also perform exceptionally.
+                Currently, I work at Vivan Web Solution Pvt. Ltd. as a Software Developer, where I focus on developing and maintaining scalable web applications using PHP and Symfony.
+                I have successfully implemented advanced features including payment gateway integrations (PayPal, Stripe), two-factor authentication for enhanced security, and chatbot functionality for interactive user engagement.
             </p>
             <p>
-                When I'm not coding, you can find me exploring new technologies, contributing
-                to open-source projects, or sharing my knowledge with the developer community.
+                I hold a Bachelor of Computer Application (BCA) degree from Som-Lalit Institute of Computer Application, Gujarat University, and I'm always eager to tackle new challenges and expand my technical expertise.
             </p>
         </div>
+
         <div class="about-image">
             <div class="profile-card">
-                <div class="profile-avatar">V</div>
-                <h3>Vrushik</h3>
-                <p>Full Stack Developer</p>
+                <div class="profile-avatar">
+                    <img src="images/profile.jpg" alt="Vrushik Raval" />
+                </div>
+                <h3>Vrushik Raval</h3>
+                <p>Software Developer</p>
+                <p style="font-size: 0.9rem; color: var(--text-gray); margin-top: 0.5rem;">
+                    📍 Ahmedabad, Gujarat<br>
+                    📞 8264229738<br>
+                    ✉️ ravalvrushik3612@gmail.com
+                </p>
             </div>
         </div>
     </div>
@@ -661,34 +695,66 @@
     <h2 class="section-title">Skills & Expertise</h2>
     <div class="skills-grid">
         <div class="skill-card">
-            <div class="skill-icon">🚀</div>
-            <h3 class="skill-name">Frontend Development</h3>
-            <p class="skill-description">React, Vue.js, HTML5, CSS3, JavaScript, TypeScript</p>
+            <div class="skill-icon">
+                <img src="images/php.png" alt="PHP Icon" />
+            </div>
+            <h3 class="skill-name">PHP Development</h3>
+            <p class="skill-description">Advanced PHP programming with OOP concepts and best practices</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="images/Laravel.png" alt="Laravel Icon" />
+            </div>
+            <h3 class="skill-name">Laravel Framework</h3>
+            <p class="skill-description">Building robust web applications using Laravel MVC architecture</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="images/Symfony.png" alt="Symfony Icon" />
+            </div>
+            <h3 class="skill-name">Symfony Framework</h3>
+            <p class="skill-description">Enterprise-level web development with Symfony components</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="images/mysql-database.png" alt="MySQL Icon" />
+            </div>
+            <h3 class="skill-name">MySQL Database</h3>
+            <p class="skill-description">Database design, optimization, and efficient management</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="images/java-script.png" alt="JavaScript Icon" />
+            </div>
+            <h3 class="skill-name">JavaScript</h3>
+            <p class="skill-description">Creating dynamic frontend functionality and interactive experiences</p>
         </div>
         <div class="skill-card">
-            <div class="skill-icon">⚙️</div>
-            <h3 class="skill-name">Backend Development</h3>
-            <p class="skill-description">Node.js, Python, PHP, Express, Django</p>
+            <div class="skill-icon">
+                <img src="images/html.png" alt="HTML5 Icon" />
+            </div>
+            <h3 class="skill-name">HTML5</h3>
+            <p class="skill-description">Building structured, semantic, and accessible web content</p>
         </div>
+
         <div class="skill-card">
-            <div class="skill-icon">🗄️</div>
-            <h3 class="skill-name">Database Management</h3>
-            <p class="skill-description">MongoDB, MySQL, PostgreSQL, Redis</p>
+            <div class="skill-icon">
+                <img src="images/css-3.png" alt="CSS3 Icon" />
+            </div>
+            <h3 class="skill-name">CSS3</h3>
+            <p class="skill-description">Designing modern, responsive, and visually appealing interfaces</p>
         </div>
+
         <div class="skill-card">
-            <div class="skill-icon">☁️</div>
-            <h3 class="skill-name">Cloud & DevOps</h3>
-            <p class="skill-description">AWS, Docker, Kubernetes, CI/CD</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">📱</div>
-            <h3 class="skill-name">Mobile Development</h3>
-            <p class="skill-description">React Native, Flutter, Progressive Web Apps</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">🎨</div>
-            <h3 class="skill-name">UI/UX Design</h3>
-            <p class="skill-description">Figma, Adobe XD, Prototyping, User Research</p>
+            <div class="skill-icon">
+                <img src="images/bootstrap.png" alt="Bootstrap Icon" />
+            </div>
+            <h3 class="skill-name">Bootstrap</h3>
+            <p class="skill-description">Creating responsive layouts with Bootstrap and modern UI components</p>
         </div>
     </div>
 </section>
@@ -698,67 +764,75 @@
     <h2 class="section-title">Featured Projects</h2>
     <div class="projects-grid">
         <div class="project-card">
-            <div class="project-image">📱</div>
+            <div class="project-image">
+                <img src="images/shivam_car_service.jpg" alt="Car Service Project" />
+            </div>
             <div class="project-content">
-                <h3 class="project-title">E-Commerce Platform</h3>
+                <h3 class="project-title">Shivam Car Service</h3>
                 <p class="project-description">
-                    A full-stack e-commerce solution with modern UI, secure payments,
-                    and advanced admin dashboard.
+                    A comprehensive car service booking website where users can choose services
+                    based on their needs and budgets. Features include service selection,
+                    booking management, and user-friendly interface.
                 </p>
                 <div class="project-tech">
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">Stripe</span>
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">Bootstrap</span>
+                    <span class="tech-tag">MySQL</span>
                 </div>
                 <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
-                    <a href="#" class="project-link">GitHub</a>
+<!--                    <a href="#" class="project-link">Live Demo</a>-->
+                    <a href="https://github.com/Yash8817/shivam-car-service" class="project-link">GitHub</a>
                 </div>
             </div>
         </div>
 
-        <div class="project-card">
-            <div class="project-image">🎯</div>
-            <div class="project-content">
-                <h3 class="project-title">Task Management App</h3>
-                <p class="project-description">
-                    A collaborative task management application with real-time updates,
-                    team collaboration features, and intuitive drag-and-drop interface.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">Vue.js</span>
-                    <span class="tech-tag">Socket.io</span>
-                    <span class="tech-tag">Express</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
-                    <a href="#" class="project-link">GitHub</a>
-                </div>
-            </div>
-        </div>
+<!--        <div class="project-card">-->
+<!--            <div class="project-image">🏢</div>-->
+<!--            <div class="project-content">-->
+<!--                <h3 class="project-title">Vivan Web Solution Projects</h3>-->
+<!--                <p class="project-description">-->
+<!--                    Professional projects developed at Vivan Web Solution Pvt. Ltd. involving-->
+<!--                    PHP and Symfony frameworks, featuring CRUD operations, database management,-->
+<!--                    and enterprise-level web applications.-->
+<!--                </p>-->
+<!--                <div class="project-tech">-->
+<!--                    <span class="tech-tag">PHP</span>-->
+<!--                    <span class="tech-tag">Symfony</span>-->
+<!--                    <span class="tech-tag">MySQL</span>-->
+<!--                    <span class="tech-tag">JavaScript</span>-->
+<!--                    <span class="tech-tag">HTML/CSS</span>-->
+<!--                </div>-->
+<!--                <div class="project-links">-->
+<!--                    <a href="#" class="project-link">View Details</a>-->
+<!--                    <a href="#" class="project-link">Portfolio</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="project-card">
-            <div class="project-image">🌟</div>
-            <div class="project-content">
-                <h3 class="project-title">AI Dashboard</h3>
-                <p class="project-description">
-                    An AI-powered analytics dashboard with machine learning insights,
-                    data visualization, and predictive analytics.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Django</span>
-                    <span class="tech-tag">TensorFlow</span>
-                    <span class="tech-tag">D3.js</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
-                    <a href="#" class="project-link">GitHub</a>
-                </div>
-            </div>
-        </div>
+<!--        <div class="project-card">-->
+<!--            <div class="project-image">🎓</div>-->
+<!--            <div class="project-content">-->
+<!--                <h3 class="project-title">Learning Projects</h3>-->
+<!--                <p class="project-description">-->
+<!--                    Collection of projects built during training at Agile Academy,-->
+<!--                    demonstrating core programming concepts, MVC structure, and-->
+<!--                    fundamental web development skills.-->
+<!--                </p>-->
+<!--                <div class="project-tech">-->
+<!--                    <span class="tech-tag">Laravel</span>-->
+<!--                    <span class="tech-tag">PHP</span>-->
+<!--                    <span class="tech-tag">MySQL</span>-->
+<!--                    <span class="tech-tag">HTML/CSS</span>-->
+<!--                    <span class="tech-tag">Bootstrap</span>-->
+<!--                </div>-->
+<!--                <div class="project-links">-->
+<!--                    <a href="#" class="project-link">View Projects</a>-->
+<!--                    <a href="#" class="project-link">GitHub</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </section>
 
@@ -768,8 +842,15 @@
     <div class="contact-content">
         <p>
             I'm always open to discussing new opportunities, interesting projects,
-            or just having a chat about technology. Feel free to reach out!
+            or collaborating on innovative web development solutions. Let's connect!
         </p>
+        <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border-radius: 15px; backdrop-filter: blur(20px);">
+            <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Get in Touch</h4>
+            <p style="margin: 0.5rem 0;">📧 ravalvrushik3612@gmail.com</p>
+            <p style="margin: 0.5rem 0;">📞 +91 8264229738</p>
+            <p style="margin: 0.5rem 0;">📍 Ahmedabad, Gujarat, India</p>
+            <p style="margin: 0.5rem 0;"><a href="https://www.linkedin.com/in/vrushik-raval-9a1810240?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BJjqdeXtBQueGvWqQLleBzw%3D%3D" target="_blank" style="color: var(--primary-color); text-decoration: none;">LinkedIn Profile</a></p>
+        </div>
         <form class="contact-form">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -792,12 +873,23 @@
 <footer>
     <div class="footer-content">
         <div class="social-links">
-            <a href="#" class="social-link">📧</a>
-            <a href="#" class="social-link">💼</a>
-            <a href="#" class="social-link">🐙</a>
-            <a href="#" class="social-link">🐦</a>
+            <a href="mailto:ravalvrushik3612@gmail.com" class="social-link" title="Email">
+                <img src="images/gmail.png" alt="Email Icon" />
+            </a>
+            <a href="https://linkedin.com/in/vrushikraval-9a1810240" target="_blank" class="social-link" title="LinkedIn">
+                <img src="images/linkedin.png" alt="Linked Icon" />
+            </a>
+            <a href="https://github.com/vrushik1710" target="_blank" class="social-link" title="GitHub">
+                <img src="images/github.svg" alt="Github Icon" />
+            </a>
+            <a href="tel:+918264229738" class="social-link" title="Phone">
+                <img src="images/mobile.png" alt="Phone Icon" />
+            </a>
         </div>
-        <p>&copy; 2025 Vrushik. All rights reserved.</p>
+        <p>&copy; 2025 Vrushik Raval. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-gray);">
+            Software Developer | PHP | Laravel | Symfony | MySQL
+        </p>
     </div>
 </footer>
 
